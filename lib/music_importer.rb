@@ -6,16 +6,16 @@ class MusicImporter
   end
 
   def files
-    # @files = []
-    # Dir.entries(self.path).each do |file| #loads all the MP3 files in the path directory
-    #   if file.include?(".mp3")
-    #   @files << File.basename(file) #normalizes the filename to just the MP3 filename with no path
-    #   end
-    # end
-    # @files
+    @files = []
+    Dir.entries(self.path).each do |file| #loads all the MP3 files in the path directory
+      if file.include?(".mp3")
+      @files << File.basename(file) #normalizes the filename to just the MP3 filename with no path
+      end
+    end
+    @files
 
     # Could also be done in one line:
-    @files ||= Dir.glob("#{path}/*.mp3").collect{|f| f.gsub("#{path}/", "")}
+    # @files ||= Dir.glob("#{path}/*.mp3").collect{|f| f.gsub("#{path}/", "")}
   end
 
   def import  #imports all files from the library and instantiates a new Song object for each file
