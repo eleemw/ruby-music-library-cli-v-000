@@ -86,7 +86,7 @@ class MusicLibraryController
     user_input = gets.chomp.to_i
 
     if (1..Song.alpha_songs.length).include?(user_input)
-      s =  Song.alpha_songs[user_input - 1]
+      s = Song.alpha_songs[user_input - 1]
       puts "Playing #{s.name} by #{s.artist.name}"
     end
   end
