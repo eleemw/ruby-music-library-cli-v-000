@@ -1,12 +1,8 @@
 
 class MusicLibraryController
-  #attr_reader :music_importer, :song, :music_library_controller
 
   def initialize(path='./db/mp3s')
     MusicImporter.new(path).import
-    # @path = path
-    # @music_importer = MusicImporter.new(@path)
-    # music_importer.import
   end
 
   def call
